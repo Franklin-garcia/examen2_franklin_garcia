@@ -9,6 +9,6 @@ package examen_garcia_franklin;
  *
  * @author Franklin Garcia
  */
-public class armas {
+public class adminRusos {
     
 }
