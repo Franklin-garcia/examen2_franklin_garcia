@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package garcia_franklin_lab1;
+package examen_garcia_franklin;
 
 /**
  *
