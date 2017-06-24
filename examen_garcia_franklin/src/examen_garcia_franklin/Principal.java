@@ -5,6 +5,9 @@
  */
 package examen_garcia_franklin;
 
+import static examen_garcia_franklin.Garcia_franklin_lab1.alemanes_viven;
+import static examen_garcia_franklin.Garcia_franklin_lab1.alumnos_viven;
+import static examen_garcia_franklin.Garcia_franklin_lab1.rusos_viven;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -135,6 +138,12 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         arbol = new javax.swing.JTree();
         jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel41 = new javax.swing.JLabel();
+        jButton9 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ta = new javax.swing.JTextArea();
 
         rusos_eliminar.setText("eliminar");
         rusos_eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -667,7 +676,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel20.setText("Tipo de arma");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Discos duros ", "Controles de Wii ", "Laptops " }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Discos duros", "Controles de Wii", "Laptops" }));
 
         jButton3.setText("Guardar");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -761,31 +770,93 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(arbol);
 
         jButton7.setText("Guardar en binario");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
+        jButton8.setText("Cargar el binario");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(80, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(184, 184, 184))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addGap(21, 21, 21))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7)
+                    .addComponent(jButton8))
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Listar", jPanel4);
+
+        jLabel41.setText("Simulacion de batalla ");
+
+        jButton9.setText("Iniciar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
+        ta.setColumns(20);
+        ta.setRows(5);
+        jScrollPane2.setViewportView(ta);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel41))))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel41)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Simulacion de guerra", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -1031,9 +1102,187 @@ public class Principal extends javax.swing.JFrame {
         jd_alemanes.setVisible(true);
     }//GEN-LAST:event_alumnos_modificarActionPerformed
 
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        adminArbol a = new adminArbol("./disco.cbm");
+        a.setModelo((DefaultTreeModel) arbol.getModel());
+        a.escribirArchivo();
+        JOptionPane.showMessageDialog(this, "se guardo");
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        adminArbol a = new adminArbol("./disco.cbm");
+        a.cargarArchivo(arbol);
+
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        boolean vive = true;
+        int cont = 0;
+        int daño = 0;
+        while (vive = true) {
+            if (cont == 0) {
+                ta.setText("Turno de rusos");
+                int con = 0;
+                int res = 0;
+                for (alemanes a : lista_alemanes) {
+                    if (lista_rusos.get(con).getTipo_arma().equals("AK-47")) {
+                        res = a.getResistencia() - 27;
+                        a.setResistencia(res);
+                        con++;
+                    } else if (lista_rusos.get(con).getTipo_arma().equals("Revolver Navant")) {
+                        res = a.getResistencia() - 13;
+                        a.setResistencia(res);
+                        con++;
+                    } else if (lista_rusos.get(con).getTipo_arma().equals("RPG-7")) {
+                        res = a.getResistencia() - 57;
+                        a.setResistencia(res);
+                        con++;
+                    }
+                }
+                
+              
+         
+                for (alumnos a : lista_alumnos) {
+                    if (lista_rusos.get(con).getTipo_arma().equals("AK-47")) {
+                        res = a.getResistencia() - 27;
+                        a.setResistencia(res);
+                    } else if (lista_rusos.get(con).getTipo_arma().equals("Revolver Navant")) {
+                        res = a.getResistencia() - 13;
+                        a.setResistencia(res);
+
+                    } else if (lista_rusos.get(con).getTipo_arma().equals("RPG-7")) {
+                        res = a.getResistencia() - 57;
+                        a.setResistencia(res);
+                      
+                    }
+                }
+                cont++;
+            } else if (cont == 1) {
+                ta.setText("Turno de alemanes");
+                int con = 0;
+                int res = 0;
+                for (rusos r : lista_rusos) {
+                    if (lista_alemanes.get(con).getTipo_arma().equals("MP 40")) {
+                        res = r.getResistencia() - 25;
+                        r.setResistencia(res);
+                    } else if (lista_alemanes.get(con).getTipo_arma().equals("Ametralladora MG42")) {
+                        res = r.getResistencia() - 32;
+                        r.setResistencia(res);
+                    } else if (lista_alemanes.get(con).getTipo_arma().equals("Pistolas Walther P38")) {
+                        res = r.getResistencia() - 11;
+                        r.setResistencia(res);
+                    }
+                }
+                for (alumnos r : lista_alumnos) {
+                    if (lista_alemanes.get(con).getTipo_arma().equals("MP 40")) {
+                        res = r.getResistencia() - 25;
+                        r.setResistencia(res);
+                    } else if (lista_alemanes.get(con).getTipo_arma().equals("Ametralladora MG42")) {
+                        res = r.getResistencia() - 32;
+                        r.setResistencia(res);
+                    } else if (lista_alemanes.get(con).getTipo_arma().equals("Pistolas Walther P38")) {
+                        res = r.getResistencia() - 11;
+                        r.setResistencia(res);
+                    }
+                }
+
+                cont++;
+            } else if (cont == 2) {
+                ta.setText("Truno de alumnos");
+                int con = 0;
+                int res = 0;
+                for (rusos r : lista_rusos) {
+                    if (lista_alumnos.get(con).getTipo_arma().equals("Discos duros")) {
+                        res = r.getResistencia() - 23;
+                        r.setResistencia(res);
+                    } else if (lista_alumnos.get(con).getTipo_arma().equals("Controles de Wii")) {
+                        res = r.getResistencia() - 47;
+                        r.setResistencia(res);
+                    } else if (lista_alumnos.get(con).getTipo_arma().equals("Laptos")) {
+                        res = r.getResistencia() - 76;
+                        r.setResistencia(res);
+                    }
+                }
+                for (alemanes r : lista_alemanes) {
+                    if (lista_alumnos.get(con).getTipo_arma().equals("Discos duros")) {
+                        res = r.getResistencia() - 23;
+                        r.setResistencia(res);
+                    } else if (lista_alumnos.get(con).getTipo_arma().equals("Controles de Wii")) {
+                        res = r.getResistencia() - 47;
+                        r.setResistencia(res);
+                    } else if (lista_alumnos.get(con).getTipo_arma().equals("Laptos")) {
+                        res = r.getResistencia() - 76;
+                        r.setResistencia(res);
+                    }
+                }
+                cont = 0;
+            }
+            int conff = 0;
+            for (rusos r : lista_rusos) {
+                if (r.getResistencia() <= 0) {
+                    muertos.add(lista_rusos.get(conff));
+                    lista_rusos.remove(r);
+                }
+                conff++;
+            }
+            int conf = 0;
+            for (alemanes a : lista_alemanes) {
+                if (a.getResistencia() <= 0) {
+                    muertos.add(lista_rusos.get(conf));
+                    lista_alemanes.remove(a);
+                }
+                conf++;
+            }
+            int conv = 0;
+            for (alumnos a : lista_alumnos) {
+                if (a.getResistencia() <= 0) {
+                    muertos.add(lista_rusos.get(conv));
+                    lista_alumnos.remove(a);
+                }
+                conv++;
+            }
+            if (alemanes_viven(lista_alemanes) == false && alumnos_viven(lista_alumnos) == false) {
+                ta.setText("gano rusia");
+                vive=false;
+
+            } else if (rusos_viven(lista_rusos) == false && alumnos_viven(lista_alumnos) == false) {
+               ta.setText("gano alemanes");
+                vive=false;
+            } else if (rusos_viven(lista_rusos) == false && alemanes_viven(lista_alemanes) == false) {
+                ta.setText( "gano alumnos");
+                vive=false;
+            }
+        }
+      
+    }//GEN-LAST:event_jButton9MouseClicked
+
     /**
      * @param args the command line arguments
      */
+    public static boolean rusos_viven(ArrayList rusos) {
+        if (rusos.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public static boolean alemanes_viven(ArrayList alemanes) {
+        if (alemanes.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public static boolean alumnos_viven(ArrayList alumnos) {
+        if (alumnos.isEmpty()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1087,6 +1336,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -1128,6 +1379,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1137,7 +1389,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
@@ -1175,6 +1429,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu pop_rusos;
     private javax.swing.JMenuItem rusos_eliminar;
     private javax.swing.JMenuItem rusos_modificar;
+    private javax.swing.JTextArea ta;
     // End of variables declaration//GEN-END:variables
     DefaultMutableTreeNode nodo_rusos;
     DefaultMutableTreeNode nodo_alemanes;
@@ -1188,4 +1443,5 @@ public class Principal extends javax.swing.JFrame {
     ArrayList<rusos> lista_rusos = new ArrayList();
     ArrayList<alemanes> lista_alemanes = new ArrayList();
     ArrayList<alumnos> lista_alumnos = new ArrayList();
+    ArrayList muertos = new ArrayList();
 }

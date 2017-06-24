@@ -5,11 +5,14 @@
  */
 package examen_garcia_franklin;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Franklin Garcia
  */
-public class rusos {
+public class rusos implements Serializable {
+    private static final long SerialVersionUID=777L;
 private String nombre;
 private int id;
 private int edad;

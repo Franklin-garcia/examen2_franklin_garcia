@@ -5,12 +5,14 @@
  */
 package examen_garcia_franklin;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Franklin Garcia
  */
-public class alumnos {
-
+public class alumnos implements Serializable{
+private static final long SerialVersionUID=779L;
 private String apodo;
 private int numero_cuenta;
 private int edad;
